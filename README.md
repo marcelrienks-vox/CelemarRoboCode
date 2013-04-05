@@ -53,3 +53,4 @@ http://robowiki.net/wiki/Robocode/.NET/Debug_a_.NET_robot_in_Visual_Studio
 ## Robots: ##
 
 ### WallE: ###
+This is my first Robot, the idea with **WallE** is at the start of the round he will immediately scan the area on the area for an opponent. When an opponent is found **WallE** move in parallel with the opponent and then start firing. This hopefully will allow the maximum number of hits per shot.
