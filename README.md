@@ -4,7 +4,7 @@ CelemarRoboCode
 This is my RoboCode project  
 http://robocode.sourceforge.net/
 
-Download and Instal:
+Download and Install:
 ---------------------
 1. Download and install the latest version of **Java**  
   http://www.java.com/en/download/index.jsp
