@@ -1,7 +1,8 @@
 CelemarRoboCode
 ===============
 
-This is where the description goes
+This is my RoboCode project  
+http://robocode.sourceforge.net/
 
 Download and Instal:
 ---------------------
