@@ -1,11 +1,11 @@
-CelemarRoboCode
-===============
+# CelemarRoboCode #
 
 This is my RoboCode project  
 http://robocode.sourceforge.net/
 
-Download and Install:
----------------------
+## Getting Started ##
+
+### Download and Install: ###
 1. The latest version of **Java**  
   http://www.java.com/en/download/index.jsp
 
@@ -13,8 +13,7 @@ Download and Install:
   Install both into the *same* default C: drive directory  
   http://sourceforge.net/projects/robocode/files/
 
-Creating a .net robot:
-----------------------
+### Creating a .net robot: ###
 Full instructions on this wiki link  
 http://robowiki.net/wiki/Robocode/.NET/Create_a_.NET_robot_with_Visual_Studio
 
@@ -38,8 +37,7 @@ http://robowiki.net/wiki/Robocode/.NET/Create_a_.NET_robot_with_Visual_Studio
       Code goes here...
   }</code></pre>
 
-Debugging a .net robot:
------------------------
+### Debugging a .net robot: ###
 Full instructions on this wiki link  
 http://robowiki.net/wiki/Robocode/.NET/Debug_a_.NET_robot_in_Visual_Studio
 
@@ -51,3 +49,7 @@ http://robowiki.net/wiki/Robocode/.NET/Debug_a_.NET_robot_in_Visual_Studio
 
 3. In Visual Studio select *Debug > Attach to Process* from the menu item  
   And from the window that appears, select the *java.exe* process
+
+## Robots: ##
+
+### WallE: ###
