@@ -1,16 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using Robocode;
 
-namespace CelemarRoboCode {
+namespace Celemar {
 	class WallE : Robot {
 		public override void Run() {
-			while (true) {
-				Ahead(5000);
-			}
+			InitialiseRobot();
+		}
+
+		/// <summary>
+		/// Initialises the robot.
+		/// </summary>
+		private void InitialiseRobot() {
+			SetColors(Color.Orange, Color.DarkSlateGray, Color.LightGray, Color.Red, Color.LightGreen);
+		}
+
+		private void ScanForOpponent() {
+
 		}
 	}
 }
