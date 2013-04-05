@@ -50,7 +50,8 @@ http://robowiki.net/wiki/Robocode/.NET/Debug_a_.NET_robot_in_Visual_Studio
 3. In Visual Studio select *Debug > Attach to Process* from the menu item  
   And from the window that appears, select the *java.exe* process
 
-## Robots: ##
+## Robots ##
 
 ### WallE: ###
+**NOTE:** still in developement  
 This is my first Robot, the idea with **WallE** is at the start of the round he will immediately scan the area on the area for an opponent. When an opponent is found **WallE** move in parallel with the opponent and then start firing. This hopefully will allow the maximum number of hits per shot.
