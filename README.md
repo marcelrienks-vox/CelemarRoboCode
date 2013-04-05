@@ -6,10 +6,10 @@ http://robocode.sourceforge.net/
 
 Download and Install:
 ---------------------
-1. Download and install the latest version of **Java**  
+1. The latest version of **Java**  
   http://www.java.com/en/download/index.jsp
 
-2. Download and install the latest version of **robocode setup** and **robocode .net setup**  
+2. The latest version of **robocode setup** and **robocode .net setup**  
   Install both into the *same* default C: drive directory  
   http://sourceforge.net/projects/robocode/files/
 
