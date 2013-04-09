@@ -2,9 +2,15 @@
 
 namespace Celemar.Libraries {
 	class Targeting {
-		public AdvancedRobot Robot { get; set; }
+		#region Properties
+		private AdvancedRobot Robot = null;
 		private int ScanDirection = -1;
+		#endregion
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Targeting"/> class.
+		/// </summary>
+		/// <param name="robot">The robot.</param>
 		public Targeting(AdvancedRobot robot) {
 			Robot = robot;
 		}
