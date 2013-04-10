@@ -1,11 +1,10 @@
 ﻿using System.Drawing;
 using Celemar.Libraries;
+using Celemar.Robots;
 using Robocode;
 
 namespace Celemar {
-	class WallE : AdvancedRobot {
-		private Targeting Targeting = null;
-		private Navigation Navigation = null;
+	public class WallE : MyAdvancedRobot {
 
 		/// <summary>
 		/// The main method in every robot
@@ -21,27 +20,27 @@ namespace Celemar {
 		/// <summary>
 		/// Initialises the robot.
 		/// </summary>
-		private void InitialiseRobot() {
-			//Initialise Libraries and Properties
-			Targeting = new Targeting(this);
-			Navigation = new Navigation(this);
-
+		public override void InitialiseRobot() {
 			//Set colours
 			SetColors(Color.Orange, Color.DarkSlateGray, Color.LightGray, Color.Red, Color.LightGreen);
 
 			//Unlock radar from gun from robot
-			IsAdjustRadarForGunTurn = true;
+			IsAdjustRadarForGunTurn   = true;
 			IsAdjustRadarForRobotTurn = true;
-			IsAdjustGunForRobotTurn = true;
+			IsAdjustGunForRobotTurn   = true;
 		}
 
 		/// <summary>
 		/// Processes the scanned robot.
 		/// </summary>
 		/// <param name="bearing">The bearing.</param>
-		private void ProcessScannedRobot(double targetHeading, double targetBearing) {
-			//Move in parallel with target
-			Navigation.MoveInParallelWithTarget(targetHeading);
+		private void ProcessScannedRobot(double targetHeading, double velocity, double targetBearing) {
+			TargetScanned = true;
+
+			//Turn in parallel with target
+			Navigation.TurnInParallelWithTarget(targetHeading);
+
+			Ahead(velocity);
 
 			//Maintain lock on target
 			Targeting.LockOnToTarget(targetBearing);
@@ -53,7 +52,7 @@ namespace Celemar {
 		/// </summary>
 		/// <param name="e">The e.</param>
 		public override void OnScannedRobot(ScannedRobotEvent e) {
-			ProcessScannedRobot(e.Heading, e.Bearing);
+			ProcessScannedRobot(e.Heading, e.Velocity, e.Bearing);
 		} 
 		#endregion
 	}

@@ -1,18 +1,19 @@
-﻿using Robocode;
+﻿using Celemar.Robots;
+using Robocode;
 
 namespace Celemar.Libraries {
-	class Targeting {
+	public class Targeting {
 		#region Properties
-		private AdvancedRobot Robot = null;
+		private MyAdvancedRobot MyRobot = null;
 		private int ScanDirection = -1;
 		#endregion
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Targeting"/> class.
+		/// Initializes a new instance of the <see cref="Targeting" /> class.
 		/// </summary>
-		/// <param name="robot">The robot.</param>
-		public Targeting(AdvancedRobot robot) {
-			Robot = robot;
+		/// <param name="myRobot">The robot.</param>
+		public Targeting(MyAdvancedRobot myRobot) {
+			MyRobot = myRobot;
 		}
 
 		/// <summary>
@@ -22,11 +23,11 @@ namespace Celemar.Libraries {
 		/// </summary>
 		public void UnlockedScanForTarget() {
 			//Sweep 45 degrees to the left
-			Robot.TurnRadarLeft(45);
+			MyRobot.TurnRadarLeft(45);
 
 			//Sweep right by 45 degrees each time
-			while (true) {
-				Robot.TurnRadarRight(45);
+			while (!MyRobot.TargetScanned) {
+				MyRobot.TurnRadarRight(45);
 			}
 		}
 
@@ -37,10 +38,10 @@ namespace Celemar.Libraries {
 		/// </summary>
 		public void LockedScanForTarget() {
 			//Sweep 45 degrees to the left
-			Robot.TurnRadarLeft(45);
+			MyRobot.TurnRadarLeft(45);
 
 			//Sweep 360 degrees to the right (405 degrees compensates for the 45 degree left sweep)
-			Robot.TurnRadarRight(405);
+			MyRobot.TurnRadarRight(405);
 		}
 
 		/// <summary>
@@ -52,13 +53,13 @@ namespace Celemar.Libraries {
 		/// <param name="targetBearing">The bearing.</param>
 		public void LockOnToTarget(double targetBearing) {
 			//Lock on to target
-			Robot.TurnRadarRight(Robot.Heading - Robot.RadarHeading + targetBearing);
+			MyRobot.TurnRadarRight(MyRobot.Heading - MyRobot.RadarHeading + targetBearing);
 
 			//swap scan direction
 			ScanDirection *= -1;
 
 			//scan
-			Robot.TurnRadarLeft(10 * ScanDirection);
+			MyRobot.TurnRadarLeft(10 * ScanDirection);
 		}
 
 		/// <summary>
@@ -70,13 +71,13 @@ namespace Celemar.Libraries {
 		/// <param name="targetBearing">The bearing.</param>
 		public void OscillateScan(double targetBearing) {
 			//Lock on to target
-			Robot.TurnRadarRight(Robot.Heading - Robot.RadarHeading + targetBearing);
+			MyRobot.TurnRadarRight(MyRobot.Heading - MyRobot.RadarHeading + targetBearing);
 
 			//swap scan direction
 			ScanDirection *= -1;
 
 			//scan
-			Robot.TurnRadarLeft(360 * ScanDirection);
+			MyRobot.TurnRadarLeft(360 * ScanDirection);
 		}
 	}
 }
