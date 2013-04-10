@@ -20,15 +20,38 @@ namespace Celemar.Libraries {
 		/// Moves the Robot in parallel with target.
 		/// </summary>
 		/// <param name="targetHeading">The target heading.</param>
-		public void TurnInParallelWithTarget(double targetHeading) {
+		public void MoveInParallelWithTarget(double targetHeading, double targetVelocity) {
 			//Get the difference in angle between robot and target
 			var difference = targetHeading - MyRobot.Heading;
 
 			//Normalize the difference
 			var normalDifference = Utils.NormalRelativeAngleDegrees(difference);
 
-			//Move in parallel
+			//Turn in parallel
 			MyRobot.TurnRight(normalDifference);
+
+			//Move with Target
+			MyRobot.Ahead(targetVelocity);
+		}
+
+		/// <summary>
+		/// Bounces the Robot off the walls.
+		/// </summary>
+		/// <param name="wallBearing">The wall bearing.</param>
+		public void BounceOffWalls(double wallBearing) {
+			//If the wall is on the Robots Right, turn Left, else turn Right
+			if (wallBearing < 0) {
+				MyRobot.TurnLeft(90);
+
+			} else if (wallBearing > 0) {
+				MyRobot.TurnRight(90);
+
+			} else {
+				MyRobot.TurnRight(90);
+			}
+
+			//Move away from wall
+			MyRobot.Ahead(double.PositiveInfinity);
 		}
 	}
 }

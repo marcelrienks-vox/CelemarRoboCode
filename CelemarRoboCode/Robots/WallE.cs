@@ -34,13 +34,11 @@ namespace Celemar {
 		/// Processes the scanned robot.
 		/// </summary>
 		/// <param name="bearing">The bearing.</param>
-		private void ProcessScannedRobot(double targetHeading, double velocity, double targetBearing) {
+		private void ProcessScannedRobot(double targetHeading, double targetVelocity, double targetBearing) {
 			TargetScanned = true;
 
 			//Turn in parallel with target
-			Navigation.TurnInParallelWithTarget(targetHeading);
-
-			Ahead(velocity);
+			Navigation.MoveInParallelWithTarget(targetHeading, targetVelocity);
 
 			//Maintain lock on target
 			Targeting.LockOnToTarget(targetBearing);
