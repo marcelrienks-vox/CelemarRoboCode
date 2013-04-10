@@ -49,10 +49,10 @@ namespace Celemar.Libraries {
 		/// This will hopefully maintain a lock on the target.
 		/// This is best used with a single enemy.
 		/// </summary>
-		/// <param name="bearing">The bearing.</param>
-		public void LockOnToTarget(double bearing) {
+		/// <param name="targetBearing">The bearing.</param>
+		public void LockOnToTarget(double targetBearing) {
 			//Lock on to target
-			Robot.TurnRadarRight(Robot.Heading - Robot.RadarHeading + bearing);
+			Robot.TurnRadarRight(Robot.Heading - Robot.RadarHeading + targetBearing);
 
 			//swap scan direction
 			ScanDirection *= -1;
@@ -67,10 +67,10 @@ namespace Celemar.Libraries {
 		/// This will allow other potentially closer targets to be scanned.
 		/// This is best used with multiple enemies.
 		/// </summary>
-		/// <param name="bearing">The bearing.</param>
-		public void OscillateScan(double bearing) {
+		/// <param name="targetBearing">The bearing.</param>
+		public void OscillateScan(double targetBearing) {
 			//Lock on to target
-			Robot.TurnRadarRight(Robot.Heading - Robot.RadarHeading + bearing);
+			Robot.TurnRadarRight(Robot.Heading - Robot.RadarHeading + targetBearing);
 
 			//swap scan direction
 			ScanDirection *= -1;

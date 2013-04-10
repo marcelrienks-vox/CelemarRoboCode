@@ -4,8 +4,8 @@ using Robocode;
 
 namespace Celemar {
 	class WallE : AdvancedRobot {
-		private Targeting targeting = null;
-		private Navigation navigation = null;
+		private Targeting Targeting = null;
+		private Navigation Navigation = null;
 
 		/// <summary>
 		/// The main method in every robot
@@ -15,22 +15,24 @@ namespace Celemar {
 			InitialiseRobot();
 
 			//Start locked scan for targets
-			targeting.LockedScanForTarget();
+			Targeting.UnlockedScanForTarget();
 		}
 
 		/// <summary>
 		/// Initialises the robot.
 		/// </summary>
 		private void InitialiseRobot() {
-			//Access the libraries
-			targeting = new Targeting(this);
-			navigation = new Navigation(this);
+			//Initialise Libraries and Properties
+			Targeting = new Targeting(this);
+			Navigation = new Navigation(this);
 
 			//Set colours
 			SetColors(Color.Orange, Color.DarkSlateGray, Color.LightGray, Color.Red, Color.LightGreen);
 
-			//Unlock radar from Gun
+			//Unlock radar from gun from robot
 			IsAdjustRadarForGunTurn = true;
+			IsAdjustRadarForRobotTurn = true;
+			IsAdjustGunForRobotTurn = true;
 		}
 
 		/// <summary>
@@ -39,10 +41,10 @@ namespace Celemar {
 		/// <param name="bearing">The bearing.</param>
 		private void ProcessScannedRobot(double targetHeading, double targetBearing) {
 			//Move in parallel with target
-			navigation.MoveInParallel(targetHeading);
+			Navigation.MoveInParallelWithTarget(targetHeading);
 
 			//Maintain lock on target
-			targeting.LockOnToTarget(targetBearing);
+			Targeting.LockOnToTarget(targetBearing);
 		}
 
 		#region Events
