@@ -8,6 +8,9 @@ http://robocode.sourceforge.net/
 ### ToDo: ###
 * Investigate IAdvancedRobot interface, this could be used instead of the MyAdvancedRobot abstract class which i created to have something that each robot could inherit off of
 * Complete WallE robot
+	* Test best result between moving in parallel with target synchronously or asynchronously
+	* Test how to lock onto target while rotating and target moving away  
+	Possibly use oscillate scan instead of lock
 
 ## Robots ##
 

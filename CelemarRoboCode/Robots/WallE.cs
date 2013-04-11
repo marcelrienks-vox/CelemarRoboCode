@@ -37,11 +37,15 @@ namespace Celemar.Robots {
 		private void ProcessScannedRobot(double targetHeading, double targetVelocity, double targetBearing) {
 			TargetScanned = true;
 
-			//Turn in parallel with target
-			Navigation.MoveInParallelWithTarget(targetHeading, targetVelocity);
+			//Turn in parallel with target synchronously
+			//Navigation.MoveInParallelWithTarget(targetHeading);
+
+			//Turn in parallel with target asynchronously
+			Navigation.SetMoveInParallelWithTarget(targetHeading);
+			Execute();
 
 			//Maintain lock on target
-			Targeting.LockOnToTarget(targetBearing);
+			//Targeting.LockOnToTarget(targetBearing);
 		}
 
 		#region Events

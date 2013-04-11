@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Libraries\Calculations.cs" />
     <Compile Include="Libraries\Navigation.cs" />
     <Compile Include="Libraries\Targeting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

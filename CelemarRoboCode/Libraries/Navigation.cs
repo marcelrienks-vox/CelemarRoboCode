@@ -16,22 +16,36 @@ namespace Celemar.Libraries {
 			MyRobot = myRobot;
 		}
 
+		#region Public
 		/// <summary>
-		/// Moves the Robot in parallel with target.
+		/// Moves the Robot in parallel with target. These are locking moves.
 		/// </summary>
 		/// <param name="targetHeading">The target heading.</param>
-		public void MoveInParallelWithTarget(double targetHeading, double targetVelocity) {
-			//Get the difference in angle between robot and target
-			var difference = targetHeading - MyRobot.Heading;
-
-			//Normalize the difference
-			var normalDifference = Utils.NormalRelativeAngleDegrees(difference);
+		public void MoveInParallelWithTarget(double targetHeading) {
+			//Calculate the angle to move Robot in parallel with target.
+			var angle = Calculations.CalculateAngleToMoveInParallelWithTarget(targetHeading, MyRobot.Heading);
 
 			//Turn in parallel
-			MyRobot.TurnRight(normalDifference);
+			MyRobot.TurnRight(angle);
 
 			//Move with Target
-			MyRobot.Ahead(targetVelocity);
+			MyRobot.Ahead(double.PositiveInfinity);
+		}
+
+		/// <summary>
+		/// Sets the Move Robot in parallel with target. These are non locking moves.
+		/// This requires Execute() to be called after this function.
+		/// </summary>
+		/// <param name="targetHeading">The target heading.</param>
+		public void SetMoveInParallelWithTarget(double targetHeading) {
+			//Calculate the angle to move Robot in parallel with target.
+			var angle = Calculations.CalculateAngleToMoveInParallelWithTarget(targetHeading, MyRobot.Heading);
+
+			//Set Turn in parallel
+			MyRobot.SetTurnRight(angle);
+
+			//Set Move with Target
+			MyRobot.SetAhead(double.PositiveInfinity);
 		}
 
 		/// <summary>
@@ -53,5 +67,6 @@ namespace Celemar.Libraries {
 			//Move away from wall
 			MyRobot.Ahead(double.PositiveInfinity);
 		}
+		#endregion
 	}
 }
