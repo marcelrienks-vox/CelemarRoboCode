@@ -8,7 +8,6 @@ http://robocode.sourceforge.net/
 ### ToDo: ###
 * Investigate IAdvancedRobot interface, this could be used instead of the MyAdvancedRobot abstract class which i created to have something that each robot could inherit off of
 * Complete WallE robot
-* Complete TargetBot robot
 
 ## Robots ##
 
@@ -17,7 +16,6 @@ http://robocode.sourceforge.net/
 This is my first Robot, the idea with **WallE** is at the start of the round he will immediately scan the area for a target. When a target is found **WallE** moves in parallel with the opponent and then start firing. This hopefully will allow the maximum number of hits per shot.
 
 ### Targetbot: ###
-**NOTE:** still in developement  
 This is a development robot designed to help with creating new robots. **TargetBot** will simply move forward untill it hits a wall, then rotate 90 degrees and move forward again.
 The idea with **TargetBot** is to have a moving target.
 
