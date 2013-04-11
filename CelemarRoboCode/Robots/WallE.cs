@@ -3,7 +3,7 @@ using Celemar.Libraries;
 using Celemar.Robots;
 using Robocode;
 
-namespace Celemar {
+namespace Celemar.Robots {
 	public class WallE : MyAdvancedRobot {
 
 		/// <summary>

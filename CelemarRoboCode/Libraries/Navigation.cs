@@ -39,12 +39,12 @@ namespace Celemar.Libraries {
 		/// </summary>
 		/// <param name="wallBearing">The wall bearing.</param>
 		public void BounceOffWalls(double wallBearing) {
-			//If the wall is on the Robots Right, turn Left, else turn Right
+			//If the wall is on the Robots Left, turn Right, else turn Left
 			if (wallBearing < 0) {
-				MyRobot.TurnLeft(90);
+				MyRobot.TurnRight(90);
 
 			} else if (wallBearing > 0) {
-				MyRobot.TurnRight(90);
+				MyRobot.TurnLeft(90);
 
 			} else {
 				MyRobot.TurnRight(90);
