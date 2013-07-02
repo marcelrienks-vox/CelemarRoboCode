@@ -17,7 +17,7 @@ namespace Celemar.Libraries {
 		}
 
 		/// <summary>
-		/// Locked Scan for target.
+		/// Unlocked Scan for target.
 		/// This performs a 45 degree sweep to the left, then sweeps right at 45 degree increments.
 		/// NOTE: this is an unlocking scan, other operations can be executed between right sweeps
 		/// </summary>

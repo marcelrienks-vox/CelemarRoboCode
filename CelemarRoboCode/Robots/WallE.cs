@@ -41,11 +41,17 @@ namespace Celemar.Robots {
 			//Navigation.MoveInParallelWithTarget(targetHeading);
 
 			//Turn in parallel with target asynchronously
-			Navigation.SetMoveInParallelWithTarget(targetHeading);
-			Execute();
+			//Navigation.SetMoveInParallelWithTarget(targetHeading);
+			//Execute();
 
 			//Maintain lock on target
-			//Targeting.LockOnToTarget(targetBearing);
+			Targeting.LockOnToTarget(targetBearing);
+
+			//Keep scanning for target
+			//Targeting.OscillateScan(targetBearing);
+
+			
+			Fire(5);
 		}
 
 		#region Events
