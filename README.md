@@ -4,6 +4,9 @@ This is my RoboCode project
 http://robocode.sourceforge.net/
 
 ## Development ##
+**NOTE:**
+A Reference to a local version of robocode.dll has been added for continuous integration,
+For development this should be changed to the installation directory of robocode, explained in 'Creating a .net robot' below
 
 ### ToDo: ###
 * Complete WallE robot

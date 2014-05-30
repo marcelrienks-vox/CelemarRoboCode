@@ -30,9 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="robocode">
-      <HintPath>..\..\..\..\..\..\..\robocode\libs\robocode.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="robocode, Version=1.9.2.1, Culture=neutral, PublicKeyToken=43c1c8ae0e25a953, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Robocode\robocode.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
