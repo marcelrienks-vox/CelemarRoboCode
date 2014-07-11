@@ -1,7 +1,7 @@
-﻿using Celemar.Libraries;
+﻿using Celemar.Robocode.Libraries;
 using Robocode;
 
-namespace Celemar.Robots
+namespace Celemar.Robocode.Robots
 {
     public abstract class MyAdvancedRobot : AdvancedRobot
     {

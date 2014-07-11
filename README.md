@@ -1,4 +1,4 @@
-# CelemarRoboCode #
+# Celemar.RoboCode #
 
 This is my RoboCode project  
 http://robocode.sourceforge.net/

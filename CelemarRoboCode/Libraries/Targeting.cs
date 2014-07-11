@@ -1,12 +1,12 @@
-﻿using Celemar.Robots;
+﻿using Celemar.Robocode.Robots;
 
-namespace Celemar.Libraries
+namespace Celemar.Robocode.Libraries
 {
     public class Targeting
     {
         #region Properties
 
-        private readonly MyAdvancedRobot MyRobot;
+        private readonly MyAdvancedRobot _myRobot;
         private int ScanDirection = -1;
 
         #endregion
@@ -17,7 +17,7 @@ namespace Celemar.Libraries
         /// <param name="myRobot">The robot.</param>
         public Targeting(MyAdvancedRobot myRobot)
         {
-            MyRobot = myRobot;
+            _myRobot = myRobot;
         }
 
         /// <summary>
@@ -28,12 +28,12 @@ namespace Celemar.Libraries
         public void UnlockedScanForTarget()
         {
             //Sweep 45 degrees to the left
-            MyRobot.TurnRadarLeft(45);
+            _myRobot.TurnRadarLeft(45);
 
             //Sweep right by 45 degrees each time
-            while (!MyRobot.TargetScanned)
+            while (!_myRobot.TargetScanned)
             {
-                MyRobot.TurnRadarRight(45);
+                _myRobot.TurnRadarRight(45);
             }
         }
 
@@ -45,10 +45,10 @@ namespace Celemar.Libraries
         public void LockedScanForTarget()
         {
             //Sweep 45 degrees to the left
-            MyRobot.TurnRadarLeft(45);
+            _myRobot.TurnRadarLeft(45);
 
             //Sweep 360 degrees to the right (405 degrees compensates for the 45 degree left sweep)
-            MyRobot.TurnRadarRight(405);
+            _myRobot.TurnRadarRight(405);
         }
 
         /// <summary>
@@ -61,13 +61,13 @@ namespace Celemar.Libraries
         public void LockOnToTarget(double targetBearing)
         {
             //Lock on to target
-            MyRobot.TurnRadarRight(MyRobot.Heading - MyRobot.RadarHeading + targetBearing);
+            _myRobot.TurnRadarRight(_myRobot.Heading - _myRobot.RadarHeading + targetBearing);
 
             //swap scan direction
             ScanDirection *= -1;
 
             //scan
-            MyRobot.TurnRadarLeft(10*ScanDirection);
+            _myRobot.TurnRadarLeft(10*ScanDirection);
         }
 
         /// <summary>
@@ -80,13 +80,13 @@ namespace Celemar.Libraries
         public void OscillateScan(double targetBearing)
         {
             //Lock on to target
-            MyRobot.TurnRadarRight(MyRobot.Heading - MyRobot.RadarHeading + targetBearing);
+            _myRobot.TurnRadarRight(_myRobot.Heading - _myRobot.RadarHeading + targetBearing);
 
             //swap scan direction
             ScanDirection *= -1;
 
             //scan
-            MyRobot.TurnRadarLeft(360*ScanDirection);
+            _myRobot.TurnRadarLeft(360*ScanDirection);
         }
     }
 }

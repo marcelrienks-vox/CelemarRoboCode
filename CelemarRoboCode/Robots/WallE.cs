@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using Robocode;
 
-namespace Celemar.Robots
+namespace Celemar.Robocode.Robots
 {
     public class WallE : MyAdvancedRobot
     {
@@ -34,7 +34,9 @@ namespace Celemar.Robots
         /// <summary>
         ///     Processes the scanned robot.
         /// </summary>
-        /// <param name="bearing">The bearing.</param>
+        /// <param name="targetHeading"></param>
+        /// <param name="targetVelocity"></param>
+        /// <param name="targetBearing"></param>
         private void ProcessScannedRobot(double targetHeading, double targetVelocity, double targetBearing)
         {
             TargetScanned = true;

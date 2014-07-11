@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using Robocode;
 
-namespace Celemar.Robots
+namespace Celemar.Robocode.Robots
 {
     public class TargetBot : MyAdvancedRobot
     {

@@ -1,6 +1,6 @@
 ﻿using Robocode.Util;
 
-namespace Celemar.Libraries
+namespace Celemar.Robocode.Libraries
 {
     public static class Calculations
     {

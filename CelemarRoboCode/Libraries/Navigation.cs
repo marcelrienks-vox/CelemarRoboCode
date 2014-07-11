@@ -1,12 +1,12 @@
-﻿using Celemar.Robots;
+﻿using Celemar.Robocode.Robots;
 
-namespace Celemar.Libraries
+namespace Celemar.Robocode.Libraries
 {
     public class Navigation
     {
         #region Properties
 
-        private readonly MyAdvancedRobot MyRobot;
+        private readonly MyAdvancedRobot _myRobot;
 
         #endregion
 
@@ -16,7 +16,7 @@ namespace Celemar.Libraries
         /// <param name="myRobot">My robot.</param>
         public Navigation(MyAdvancedRobot myRobot)
         {
-            MyRobot = myRobot;
+            _myRobot = myRobot;
         }
 
         #region Public
@@ -28,13 +28,13 @@ namespace Celemar.Libraries
         public void MoveInParallelWithTarget(double targetHeading)
         {
             //Calculate the angle to move Robot in parallel with target.
-            var angle = Calculations.CalculateAngleToMoveInParallelWithTarget(targetHeading, MyRobot.Heading);
+            var angle = Calculations.CalculateAngleToMoveInParallelWithTarget(targetHeading, _myRobot.Heading);
 
             //Turn in parallel
-            MyRobot.TurnRight(angle);
+            _myRobot.TurnRight(angle);
 
             //Move with Target
-            MyRobot.Ahead(double.PositiveInfinity);
+            _myRobot.Ahead(double.PositiveInfinity);
         }
 
         /// <summary>
@@ -45,13 +45,13 @@ namespace Celemar.Libraries
         public void SetMoveInParallelWithTarget(double targetHeading)
         {
             //Calculate the angle to move Robot in parallel with target.
-            var angle = Calculations.CalculateAngleToMoveInParallelWithTarget(targetHeading, MyRobot.Heading);
+            var angle = Calculations.CalculateAngleToMoveInParallelWithTarget(targetHeading, _myRobot.Heading);
 
             //Set Turn in parallel
-            MyRobot.SetTurnRight(angle);
+            _myRobot.SetTurnRight(angle);
 
             //Set Move with Target
-            MyRobot.SetAhead(double.PositiveInfinity);
+            _myRobot.SetAhead(double.PositiveInfinity);
         }
 
         /// <summary>
@@ -63,19 +63,19 @@ namespace Celemar.Libraries
             //If the wall is on the Robots Left, turn Right, else turn Left
             if (wallBearing < 0)
             {
-                MyRobot.TurnRight(90);
+                _myRobot.TurnRight(90);
             }
             else if (wallBearing > 0)
             {
-                MyRobot.TurnLeft(90);
+                _myRobot.TurnLeft(90);
             }
             else
             {
-                MyRobot.TurnRight(90);
+                _myRobot.TurnRight(90);
             }
 
             //Move away from wall
-            MyRobot.Ahead(double.PositiveInfinity);
+            _myRobot.Ahead(double.PositiveInfinity);
         }
 
         #endregion
