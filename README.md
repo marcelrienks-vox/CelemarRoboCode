@@ -1,5 +1,4 @@
 # Celemar.RoboCode
-[![Build Status](https://dev.azure.com/marcelrienks/Celemar.RoboCode/_apis/build/status/marcelrienks.Celemar.RoboCode?branchName=master)](https://dev.azure.com/marcelrienks/Celemar.RoboCode/_build/latest?definitionId=10&branchName=master)  
 This is my RoboCode project  
 http://robocode.sourceforge.net/
 
